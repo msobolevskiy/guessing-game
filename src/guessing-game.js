@@ -1,21 +1,27 @@
 class GuessingGame {
-    constructor() {}
+constructor() {
+    let closestPoint = undefined;
+    this.max = undefined;
+    this.min = undefined;
+}
 
-    setRange(min, max) {
+setRange(min, max) {
+    this.max = max;
+    this.min = min;
+}
 
-    }
+guess() {
+    this.closestPoint = Math.round((this.min + this.max) / 2);
+    return this.closestPoint;
+}
 
-    guess() {
+lower() {
+    this.max = this.closestPoint;
+}
 
-    }
-
-    lower() {
-
-    }
-
-    greater() {
-
-    }
+greater() {
+    this.min = this.closestPoint;
+}
 }
 
 module.exports = GuessingGame;
